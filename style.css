@@ -1,0 +1,105 @@
+:root {
+    --bg-light: #f8fafc;
+    --panel-bg: #ffffff;
+    --text-dark: #1e293b;
+    --stroke-dark: #1e293b;
+    
+    /* Warna Pop Art Pastel */
+    --pink: #ff477e;
+    --blue: #00f0ff;
+    --yellow: #ffb703;
+    --green: #06d6a0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.soundboard-container {
+    background-color: var(--panel-bg);
+    padding: 35px;
+    border-radius: 28px;
+    border: 3px solid var(--stroke-dark);
+    box-shadow: 6px 6px 0px var(--stroke-dark);
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+}
+
+.board-header h1 {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.board-header p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Kisi Grid 2x2 */
+.sound-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Kartu Tombol Hewan */
+.animal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+    border: 3px solid var(--stroke-dark);
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--stroke-dark);
+    outline: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Variasi Warna Kartu */
+.card-pink { background-color: var(--pink); }
+.card-blue { background-color: var(--blue); }
+.card-yellow { background-color: var(--yellow); }
+.card-green { background-color: var(--green); }
+
+.animal-card .emoji {
+    font-size: 3rem;
+    margin-bottom: 8px;
+    user-select: none;
+}
+
+.animal-card .name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+/* Efek Animasi Pop Art saat Ditekan atau Diarahkan Kursor */
+.animal-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--stroke-dark);
+}
+
+.animal-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--stroke-dark);
+}
